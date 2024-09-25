@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensajería ESC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            margin-top: 5px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #texto {
+            border: 1px solid #ddd;
+            padding: 5px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        h1{
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        label, input{
+            margin-bottom: 10px;
+        }
+        #calcularBtn{
+            margin-bottom: 5px;
+        }
+        p{
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mensaje inicial</h1>
+<textarea id="texto1" rows="3" cols="50">
+*Mensajería ESC* por favor llenar el formulario para su *Domicilio*: 
+https://andressantana1.github.io/shipi/ 
+</textarea>
+    <br>
+    <button id="copiarBtn1">Copiar Texto</button>
+
+    <script>
+        document.getElementById('copiarBtn1').onclick = function() {
+            const texto = document.getElementById('texto1');
+            texto.select();
+            document.execCommand('copy');
+        };
+    </script>
+
+<h1>Valor</h1>
+<label for="distancia">Distancia (km):</label>
+<input type="number" id="distancia" placeholder="Ingrese la distancia" required>
+<br>
+<label for="tiempo">Tiempo &nbsp&nbsp(min):</label>
+<input type="number" id="tiempo" placeholder="Ingrese el tiempo" required>
+<br>
+<button id="calcularBtn">Calcular Domicilio</button>
+<br>
+<textarea id="texto2" rows="3" cols="50">
+
+</textarea>
+<script>
+    document.getElementById('calcularBtn').onclick = function() {
+        const distancia = parseFloat(document.getElementById('distancia').value);
+        const tiempo = parseFloat(document.getElementById('tiempo').value);
+        console.log(distancia)
+        console.log(tiempo)
+        if (!distancia || !tiempo ) {
+            alert('Por favor, complete todos los campos.');
+            return;
+        }
+
+        if(distancia > 9 && distancia <= 14){
+            costo_adicional=2000;
+        }else if(distancia > 14 && distancia <= 20){
+            costo_adicional=5000;
+        }else if(distancia > 20 && distancia <= 25){
+            costo_adicional=8000;
+        }else if(distancia > 25 && distancia <= 30){
+            costo_adicional=12000;
+        }else{
+            costo_adicional=0;
+        }
+
+        const costoViaje=(1430.28+167.67*distancia+tiempo*150+costo_adicional)/0.8
+
+        if (costoViaje > 0 && costoViaje <= 4000) {
+                valorAjustado = 4000;
+            } else if (costoViaje > 4000 && costoViaje <= 4500) {
+                valorAjustado = 4500;
+            } else if (costoViaje> 4500 && costoViaje<= 5000) {
+                valorAjustado = 5000;
+            } else if (costoViaje> 5000 && costoViaje<= 5500) {
+                valorAjustado = 5500;
+            } else if (costoViaje> 5500 && costoViaje<= 6000) {
+                valorAjustado = 6000;
+            } else if (costoViaje> 6000 && costoViaje<= 6500) {
+                valorAjustado = 6500;
+            } else if (costoViaje> 6500 && costoViaje<= 7000) {
+                valorAjustado = 7000;
+            } else if (costoViaje> 7000 && costoViaje<= 7500) {
+                valorAjustado = 7500;
+            } else if (costoViaje> 7500 && costoViaje<= 8000) {
+                valorAjustado = 8000;
+            } else if (costoViaje> 8000 && costoViaje<= 8500) {
+                valorAjustado = 8500;
+            } else if (costoViaje> 8500 && costoViaje<= 9000) {
+                valorAjustado = 9000;
+            } else if (costoViaje> 9000 && costoViaje<= 9500) {
+                valorAjustado = 9500;
+            } 
+            else if (costoViaje> 9500 && costoViaje<=10000) {valorAjustado = 10000;}
+else if (costoViaje> 10000 && costoViaje<=10500) {valorAjustado = 10500;}
+else if (costoViaje> 10500 && costoViaje<=11000) {valorAjustado = 11000;}
+else if (costoViaje> 11000 && costoViaje<=11500) {valorAjustado = 11500;}
+else if (costoViaje> 11500 && costoViaje<=12000) {valorAjustado = 12000;}
+else if (costoViaje> 12000 && costoViaje<=12500) {valorAjustado = 12500;}
+else if (costoViaje> 12500 && costoViaje<=13000) {valorAjustado = 13000;}
+else if (costoViaje> 13000 && costoViaje<=13500) {valorAjustado = 13500;}
+else if (costoViaje> 13500 && costoViaje<=14000) {valorAjustado = 14000;}
+else if (costoViaje> 14000 && costoViaje<=14500) {valorAjustado = 14500;}
+else if (costoViaje> 14500 && costoViaje<=15000) {valorAjustado = 15000;}
+else if (costoViaje> 15000 && costoViaje<=15500) {valorAjustado = 15500;}
+else if (costoViaje> 15500 && costoViaje<=16000) {valorAjustado = 16000;}
+else if (costoViaje> 16000 && costoViaje<=16500) {valorAjustado = 16500;}
+else if (costoViaje> 16500 && costoViaje<=17000) {valorAjustado = 17000;}
+else if (costoViaje> 17000 && costoViaje<=17500) {valorAjustado = 17500;}
+else if (costoViaje> 17500 && costoViaje<=18000) {valorAjustado = 18000;}
+else if (costoViaje> 18000 && costoViaje<=18500) {valorAjustado = 18500;}
+else if (costoViaje> 18500 && costoViaje<=19000) {valorAjustado = 19000;}
+else if (costoViaje> 19000 && costoViaje<=19500) {valorAjustado = 19500;}
+else if (costoViaje> 19500 && costoViaje<=20000) {valorAjustado = 20000;}
+else if (costoViaje> 20000 && costoViaje<=20500) {valorAjustado = 20500;}
+else if (costoViaje> 20500 && costoViaje<=21000) {valorAjustado = 21000;}
+else if (costoViaje> 21000 && costoViaje<=21500) {valorAjustado = 21500;}
+else if (costoViaje> 21500 && costoViaje<=22000) {valorAjustado = 22000;}
+else if (costoViaje> 22000 && costoViaje<=22500) {valorAjustado = 22500;}
+else if (costoViaje> 22500 && costoViaje<=23000) {valorAjustado = 23000;}
+else if (costoViaje> 23000 && costoViaje<=23500) {valorAjustado = 23500;}
+else if (costoViaje> 23500 && costoViaje<=24000) {valorAjustado = 24000;}
+else if (costoViaje> 24000 && costoViaje<=24500) {valorAjustado = 24500;}
+else if (costoViaje> 24500 && costoViaje<=25000) {valorAjustado = 25000;}
+else if (costoViaje> 25000 && costoViaje<=25500) {valorAjustado = 25500;}
+else if (costoViaje> 25500 && costoViaje<=26000) {valorAjustado = 26000;}
+else if (costoViaje> 26000 && costoViaje<=26500) {valorAjustado = 26500;}
+else if (costoViaje> 26500 && costoViaje<=27000) {valorAjustado = 27000;}
+else if (costoViaje> 27000 && costoViaje<=27500) {valorAjustado = 27500;}
+else if (costoViaje> 27500 && costoViaje<=28000) {valorAjustado = 28000;}
+else if (costoViaje> 28000 && costoViaje<=28500) {valorAjustado = 28500;}
+else if (costoViaje> 28500 && costoViaje<=29000) {valorAjustado = 29000;}
+else if (costoViaje> 29000 && costoViaje<=29500) {valorAjustado = 29500;}
+else if (costoViaje> 29500 && costoViaje<=30000) {valorAjustado = 30000;}
+else if (costoViaje> 30000 && costoViaje<=30500) {valorAjustado = 30500;}
+else if (costoViaje> 30500 && costoViaje<=31000) {valorAjustado = 31000;}
+else if (costoViaje> 31000 && costoViaje<=31500) {valorAjustado = 31500;}
+else if (costoViaje> 31500 && costoViaje<=32000) {valorAjustado = 32000;}
+else if (costoViaje> 32000 && costoViaje<=32500) {valorAjustado = 32500;}
+else if (costoViaje> 32500 && costoViaje<=33000) {valorAjustado = 33000;}
+else if (costoViaje> 33000 && costoViaje<=33500) {valorAjustado = 33500;}
+else if (costoViaje> 33500 && costoViaje<=34000) {valorAjustado = 34000;}
+else if (costoViaje> 34000 && costoViaje<=34500) {valorAjustado = 34500;}
+else if (costoViaje> 34500 && costoViaje<=35000) {valorAjustado = 35000;}
+else if (costoViaje> 35000 && costoViaje<=35500) {valorAjustado = 35500;}
+else if (costoViaje> 35500 && costoViaje<=36000) {valorAjustado = 36000;}
+else if (costoViaje> 36000 && costoViaje<=36500) {valorAjustado = 36500;}
+else if (costoViaje> 36500 && costoViaje<=37000) {valorAjustado = 37000;}
+else if (costoViaje> 37000 && costoViaje<=37500) {valorAjustado = 37500;}
+else if (costoViaje> 37500 && costoViaje<=38000) {valorAjustado = 38000;}
+else if (costoViaje> 38000 && costoViaje<=38500) {valorAjustado = 38500;}
+else if (costoViaje> 38500 && costoViaje<=39000) {valorAjustado = 39000;}
+else if (costoViaje> 39000 && costoViaje<=39500) {valorAjustado = 39500;}
+else if (costoViaje> 39500 && costoViaje<=40000) {valorAjustado = 40000;}
+else if (costoViaje> 40000 && costoViaje<=40500) {valorAjustado = 40500;}
+else if (costoViaje> 40500 && costoViaje<=41000) {valorAjustado = 41000;}
+else if (costoViaje> 41000 && costoViaje<=41500) {valorAjustado = 41500;}
+else if (costoViaje> 41500 && costoViaje<=42000) {valorAjustado = 42000;}
+else if (costoViaje> 42000 && costoViaje<=42500) {valorAjustado = 42500;}
+else if (costoViaje> 42500 && costoViaje<=43000) {valorAjustado = 43000;}
+else if (costoViaje> 43000 && costoViaje<=43500) {valorAjustado = 43500;}
+else if (costoViaje> 43500 && costoViaje<=44000) {valorAjustado = 44000;}
+else if (costoViaje> 44000 && costoViaje<=44500) {valorAjustado = 44500;}
+else if (costoViaje> 44500 && costoViaje<=45000) {valorAjustado = 45000;}
+else if (costoViaje> 45000 && costoViaje<=45500) {valorAjustado = 45500;}
+else if (costoViaje> 45500 && costoViaje<=46000) {valorAjustado = 46000;}
+else if (costoViaje> 46000 && costoViaje<=46500) {valorAjustado = 46500;}
+else if (costoViaje> 46500 && costoViaje<=47000) {valorAjustado = 47000;}
+else if (costoViaje> 47000 && costoViaje<=47500) {valorAjustado = 47500;}
+else if (costoViaje> 47500 && costoViaje<=48000) {valorAjustado = 48000;}
+else if (costoViaje> 48000 && costoViaje<=48500) {valorAjustado = 48500;}
+else if (costoViaje> 48500 && costoViaje<=49000) {valorAjustado = 49000;}
+else if (costoViaje> 49000 && costoViaje<=49500) {valorAjustado = 49500;}
+else if (costoViaje> 49500 && costoViaje<=50000) {valorAjustado = 50000;}
+else if (costoViaje> 50000 && costoViaje<=50500) {valorAjustado = 50500;}
+else if (costoViaje> 50500 && costoViaje<=51000) {valorAjustado = 51000;}
+else if (costoViaje> 51000 && costoViaje<=51500) {valorAjustado = 51500;}
+else if (costoViaje> 51500 && costoViaje<=52000) {valorAjustado = 52000;}
+else if (costoViaje> 52000 && costoViaje<=52500) {valorAjustado = 52500;}
+else if (costoViaje> 52500 && costoViaje<=53000) {valorAjustado = 53000;}
+else if (costoViaje> 53000 && costoViaje<=53500) {valorAjustado = 53500;}
+else if (costoViaje> 53500 && costoViaje<=54000) {valorAjustado = 54000;}
+else if (costoViaje> 54000 && costoViaje<=54500) {valorAjustado = 54500;}
+else if (costoViaje> 54500 && costoViaje<=55000) {valorAjustado = 55000;}
+else if (costoViaje> 55000 && costoViaje<=55500) {valorAjustado = 55500;}
+else if (costoViaje> 55500 && costoViaje<=56000) {valorAjustado = 56000;}
+else if (costoViaje> 56000 && costoViaje<=56500) {valorAjustado = 56500;}
+else if (costoViaje> 56500 && costoViaje<=57000) {valorAjustado = 57000;}
+else if (costoViaje> 57000 && costoViaje<=57500) {valorAjustado = 57500;}
+else if (costoViaje> 57500 && costoViaje<=58000) {valorAjustado = 58000;}
+else if (costoViaje> 58000 && costoViaje<=58500) {valorAjustado = 58500;}
+else if (costoViaje> 58500 && costoViaje<=59000) {valorAjustado = 59000;}
+else if (costoViaje> 59000 && costoViaje<=59500) {valorAjustado = 59500;}
+else if (costoViaje> 59500 && costoViaje<=60000) {valorAjustado = 60000;}
+else if (costoViaje> 60000 && costoViaje<=60500) {valorAjustado = 60500;}
+else if (costoViaje> 60500 && costoViaje<=61000) {valorAjustado = 61000;}
+else if (costoViaje> 61000 && costoViaje<=61500) {valorAjustado = 61500;}
+else if (costoViaje> 61500 && costoViaje<=62000) {valorAjustado = 62000;}
+else if (costoViaje> 62000 && costoViaje<=62500) {valorAjustado = 62500;}
+else if (costoViaje> 62500 && costoViaje<=63000) {valorAjustado = 63000;}
+else if (costoViaje> 63000 && costoViaje<=63500) {valorAjustado = 63500;}
+else if (costoViaje> 63500 && costoViaje<=64000) {valorAjustado = 64000;}
+else if (costoViaje> 64000 && costoViaje<=64500) {valorAjustado = 64500;}
+else if (costoViaje> 64500 && costoViaje<=65000) {valorAjustado = 65000;}
+else if (costoViaje> 65000 && costoViaje<=65500) {valorAjustado = 65500;}
+else if (costoViaje> 65500 && costoViaje<=66000) {valorAjustado = 66000;}
+else if (costoViaje> 66000 && costoViaje<=66500) {valorAjustado = 66500;}
+else if (costoViaje> 66500 && costoViaje<=67000) {valorAjustado = 67000;}
+else if (costoViaje> 67000 && costoViaje<=67500) {valorAjustado = 67500;}
+else if (costoViaje> 67500 && costoViaje<=68000) {valorAjustado = 68000;}
+else if (costoViaje> 68000 && costoViaje<=68500) {valorAjustado = 68500;}
+else if (costoViaje> 68500 && costoViaje<=69000) {valorAjustado = 69000;}
+else if (costoViaje> 69000 && costoViaje<=69500) {valorAjustado = 69500;}
+else if (costoViaje> 69500 && costoViaje<=70000) {valorAjustado = 70000;}
+else if (costoViaje> 70000 && costoViaje<=70500) {valorAjustado = 70500;}
+else if (costoViaje> 70500 && costoViaje<=71000) {valorAjustado = 71000;}
+else if (costoViaje> 71000 && costoViaje<=71500) {valorAjustado = 71500;}
+else if (costoViaje> 71500 && costoViaje<=72000) {valorAjustado = 72000;}
+else if (costoViaje> 72000 && costoViaje<=72500) {valorAjustado = 72500;}
+else if (costoViaje> 72500 && costoViaje<=73000) {valorAjustado = 73000;}
+else if (costoViaje> 73000 && costoViaje<=73500) {valorAjustado = 73500;}
+else if (costoViaje> 73500 && costoViaje<=74000) {valorAjustado = 74000;}
+else if (costoViaje> 74000 && costoViaje<=74500) {valorAjustado = 74500;}
+else if (costoViaje> 74500 && costoViaje<=75000) {valorAjustado = 75000;}
+else if (costoViaje> 75000 && costoViaje<=75500) {valorAjustado = 75500;}
+else if (costoViaje> 75500 && costoViaje<=76000) {valorAjustado = 76000;}
+else if (costoViaje> 76000 && costoViaje<=76500) {valorAjustado = 76500;}
+else if (costoViaje> 76500 && costoViaje<=77000) {valorAjustado = 77000;}
+else if (costoViaje> 77000 && costoViaje<=77500) {valorAjustado = 77500;}
+else if (costoViaje> 77500 && costoViaje<=78000) {valorAjustado = 78000;}
+else if (costoViaje> 78000 && costoViaje<=78500) {valorAjustado = 78500;}
+else if (costoViaje> 78500 && costoViaje<=79000) {valorAjustado = 79000;}
+else if (costoViaje> 79000 && costoViaje<=79500) {valorAjustado = 79500;}
+else if (costoViaje> 79500 && costoViaje<=80000) {valorAjustado = 80000;}
+else if (costoViaje> 80000 && costoViaje<=80500) {valorAjustado = 80500;}
+else if (costoViaje> 80500 && costoViaje<=81000) {valorAjustado = 81000;}
+else if (costoViaje> 81000 && costoViaje<=81500) {valorAjustado = 81500;}
+else if (costoViaje> 81500 && costoViaje<=82000) {valorAjustado = 82000;}
+else if (costoViaje> 82000 && costoViaje<=82500) {valorAjustado = 82500;}
+else if (costoViaje> 82500 && costoViaje<=83000) {valorAjustado = 83000;}
+else if (costoViaje> 83000 && costoViaje<=83500) {valorAjustado = 83500;}
+else if (costoViaje> 83500 && costoViaje<=84000) {valorAjustado = 84000;}
+else if (costoViaje> 84000 && costoViaje<=84500) {valorAjustado = 84500;}
+else if (costoViaje> 84500 && costoViaje<=85000) {valorAjustado = 85000;}
+else if (costoViaje> 85000 && costoViaje<=85500) {valorAjustado = 85500;}
+else if (costoViaje> 85500 && costoViaje<=86000) {valorAjustado = 86000;}
+else if (costoViaje> 86000 && costoViaje<=86500) {valorAjustado = 86500;}
+else if (costoViaje> 86500 && costoViaje<=87000) {valorAjustado = 87000;}
+else if (costoViaje> 87000 && costoViaje<=87500) {valorAjustado = 87500;}
+else if (costoViaje> 87500 && costoViaje<=88000) {valorAjustado = 88000;}
+else if (costoViaje> 88000 && costoViaje<=88500) {valorAjustado = 88500;}
+else if (costoViaje> 88500 && costoViaje<=89000) {valorAjustado = 89000;}
+else if (costoViaje> 89000 && costoViaje<=89500) {valorAjustado = 89500;}
+else if (costoViaje> 89500 && costoViaje<=90000) {valorAjustado = 90000;}
+else if (costoViaje> 90000 && costoViaje<=90500) {valorAjustado = 90500;}
+else if (costoViaje> 90500 && costoViaje<=91000) {valorAjustado = 91000;}
+else if (costoViaje> 91000 && costoViaje<=91500) {valorAjustado = 91500;}
+else if (costoViaje> 91500 && costoViaje<=92000) {valorAjustado = 92000;}
+else if (costoViaje> 92000 && costoViaje<=92500) {valorAjustado = 92500;}
+else if (costoViaje> 92500 && costoViaje<=93000) {valorAjustado = 93000;}
+else if (costoViaje> 93000 && costoViaje<=93500) {valorAjustado = 93500;}
+else if (costoViaje> 93500 && costoViaje<=94000) {valorAjustado = 94000;}
+else if (costoViaje> 94000 && costoViaje<=94500) {valorAjustado = 94500;}
+else if (costoViaje> 94500 && costoViaje<=95000) {valorAjustado = 95000;}
+else if (costoViaje> 95000 && costoViaje<=95500) {valorAjustado = 95500;}
+else if (costoViaje> 95500 && costoViaje<=96000) {valorAjustado = 96000;}
+else if (costoViaje> 96000 && costoViaje<=96500) {valorAjustado = 96500;}
+else if (costoViaje> 96500 && costoViaje<=97000) {valorAjustado = 97000;}
+else if (costoViaje> 97000 && costoViaje<=97500) {valorAjustado = 97500;}
+else if (costoViaje> 97500 && costoViaje<=98000) {valorAjustado = 98000;}
+else if (costoViaje> 98000 && costoViaje<=98500) {valorAjustado = 98500;}
+else if (costoViaje> 98500 && costoViaje<=99000) {valorAjustado = 99000;}
+else if (costoViaje> 99000 && costoViaje<=99500) {valorAjustado = 99500;}
+else if (costoViaje> 99500 && costoViaje<=100000) {valorAjustado = 100000;}
+
+            else {
+                valorAjustado = "0";
+            }
+
+        const formateador = new Intl.NumberFormat('es-CO', {
+                style: 'decimal',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            });
+
+const resultado = `*Valor:* $${formateador.format(valorAjustado.toFixed(0))}
+    
+Me confirmas para enviar al domiciliario.`;
+        
+        document.getElementById('texto2').textContent = resultado;
+    };
+</script>
+
+<br>
+<button id="copiarBtn2">Copiar Texto</button>
+
+<script>
+    document.getElementById('copiarBtn2').onclick = function() {
+        const texto = document.getElementById('texto2');
+        texto.select();
+        document.execCommand('copy');
+    };
+</script>
+
+<h1>Final</h1>
+<textarea id="texto3" rows="1" cols="50">
+Listo el domiciliario va en camino.
+</textarea>
+<br>
+<button id="copiarBtn3">Copiar Texto</button>
+
+<script>
+    document.getElementById('copiarBtn3').onclick = function() {
+        const texto = document.getElementById('texto3');
+        texto.select();
+        document.execCommand('copy');
+    };
+</script>
+
+
+</body>
+</html>
